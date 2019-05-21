@@ -1,0 +1,77 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+
+target 'integ' do
+  pod 'AppCenter/Crashes', '~> 2.0.1'
+  pod 'AppCenter/Analytics', '~> 2.0.1'
+  pod 'AppCenterReactNativeShared', '~> 2.0.0'
+  
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for integ
+  pod 'Firebase/Core', '~> 5.15.0'
+  pod 'Firebase/Messaging', '~> 5.15.0'
+  pod 'Firebase/Firestore', '~> 5.15.0'
+  pod 'Firebase/Auth', '~> 5.15.0'
+  pod 'Firebase/Storage', '~> 5.15.0'
+
+  pod 'React', :path => '../node_modules/react-native'
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+
+
+  pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'appcenter', path: '../node_modules/appcenter/ios'
+pod 'appcenter-analytics', path: '../node_modules/appcenter-analytics/ios'
+pod 'appcenter-crashes', path: '../node_modules/appcenter-crashes/ios'
+pod 'appcenter-push', path: '../node_modules/appcenter-push/ios'
+
+
+  target 'integTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  #post_install do |installer|
+  #  installer.pods_project.targets.each do |target|
+  #    if target.name == "React"
+  #      target.remove_from_project
+  #    end
+  #  end
+  #end
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+
+      # The following is needed to ensure the "archive" step works in XCode.
+      # It removes React & Yoga from the Pods project, as it is already included in the main project.
+      # Without this, you'd see errors when you archive like:
+      # "Multiple commands produce ... libReact.a"
+      # "Multiple commands produce ... libyoga.a"
+
+      targets_to_ignore = %w(React yoga)
+      
+      if targets_to_ignore.include? target.name
+        target.remove_from_project
+      end
+
+    end
+  end
+
+end
+
+target 'integ-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for integ-tvOS
+
+  target 'integ-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

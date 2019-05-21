@@ -1,0 +1,25 @@
+{
+  "name": "RNDeviceInfo",
+  "version": "1.4.1",
+  "summary": "Get device information using react-native",
+  "homepage": "git+https://github.com/react-native-community/react-native-device-info.git",
+  "license": "MIT",
+  "authors": {
+    "name": "Rebecca Hughes",
+    "email": "rebecca@learnium.net",
+    "url": "https://github.com/rebeccahughes"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "tvos": "10.0"
+  },
+  "source": {
+    "git": "https://github.com/react-native-community/react-native-device-info.git"
+  },
+  "source_files": "ios/RNDeviceInfo/*.{h,m}",
+  "dependencies": {
+    "React": [
+
+    ]
+  }
+}

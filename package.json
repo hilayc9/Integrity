@@ -1,0 +1,54 @@
+{
+  "name": "integ",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/runtime": "^7.0.0-beta.55",
+    "appcenter": "2.0.0",
+    "appcenter-analytics": "2.0.0",
+    "appcenter-crashes": "2.0.0",
+    "appcenter-push": "2.0.0",
+    "firebase": "^5.8.3",
+    "moment": "^2.24.0",
+    "native-base": "^2.12.0",
+    "prop-types": "^15.7.2",
+    "react": "16.8.3",
+    "react-native": "0.59.8",
+    "react-native-autocomplete-input": "^3.6.0",
+    "react-native-device-info": "^1.1.0",
+    "react-native-easy-toast": "^1.2.0",
+    "react-native-elements": "^1.0.0",
+    "react-native-firebase": "^5.2.2",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-native-material-textinput": "^1.1.0",
+    "react-native-material-ui": "^1.30.1",
+    "react-native-modal": "^9.0.0",
+    "react-native-modal-datetime-picker": "^6.0.0",
+    "react-native-popup-menu": "^0.15.0",
+    "react-native-swipe-list-view": "^1.5.3",
+    "react-native-vector-icons": "^6.3.0",
+    "react-navigation": "^3.3.0",
+    "schedule": "^0.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.0",
+    "@babel/runtime": "7.4.2",
+    "@react-native-community/eslint-config": "0.0.3",
+    "babel-jest": "24.5.0",
+    "eslint": "5.16.0",
+    "jest": "24.5.0",
+    "metro-react-native-babel-preset": "0.53.1",
+    "react-test-renderer": "16.8.3",
+    "babel-core": "7.0.0-bridge.0",
+    "react-native-schemes-manager": "^1.0.5"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
