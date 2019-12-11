@@ -206,7 +206,7 @@ export default class Integ extends Component {
     loadJsonFile(){
             this.setState({loadingState: 'Getting queries...'});
             firebase.storage().ref('/').child('integ.json').getMetadata().then(metadata => {
-                let datetime = moment.utc(metadata.updated).local().format("DD/MM/YY H:mm");
+                let datetime = moment.utc(metadata.updated).local().format("DD/MM/YY H:mm"); //metadata.timeCreated
 
                 this.setState({
                     updateDate: datetime
